@@ -36,6 +36,10 @@ set expandtab
 set lbr
 set tw=100
 
+" cursor move between lines, from left to right into 
+" previous line
+set whichwrap+=<,>,h,l,[,]
+
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
    set t_Co=256
