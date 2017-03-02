@@ -1,0 +1,33 @@
+
+# describes the assembler code
+# -> pretty nice but lots of redundant stuff
+e asm.describe=false
+
+# set UTF8, arrows and everything looks a way smoother
+e scr.utf8=true
+
+# Solarized theme
+eco solarized
+
+# instead of clear assembler code it leads to a
+# weird c like thing which is hard to read..
+#e asm.pseudo=true
+
+# Display stack and register values on top of disasembly view
+#e cmd.stack=true
+
+# copied
+e asm.demangle=true
+e bin.demangle=true
+e asm.emu=true
+e asm.emustr=true
+
+# preload scripts (add complete path)
+# I know there is a '#' but r2 will execute it like a normal
+# macro creation command
+(script, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/exp_tool2.py)
+
+# maybe if we need some parameters
+# (script argv, \#!pipe python2.7 /PATH/exp_tool2.py $0)
+
+
