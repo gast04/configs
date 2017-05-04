@@ -25,7 +25,9 @@ e asm.emustr=true
 # preload scripts (add complete path)
 # I know there is a '#' but r2 will execute it like a normal
 # macro creation command
-(script, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/exp_tool2.py)
+(sse, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/exp_tool2.py)
+(slc, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/findComments.py)
+(sdc, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/clearComments.py)
 
 # maybe if we need some parameters
 # (script argv, \#!pipe python2.7 /PATH/exp_tool2.py $0)
