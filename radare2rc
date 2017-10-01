@@ -13,10 +13,7 @@ eco solarized
 # weird c like thing which is hard to read..
 #e asm.pseudo=true
 
-# Display stack and register values on top of disasembly view
-#e cmd.stack=true
-
-# copied
+# copied (I am not sure what it does)
 e asm.demangle=true
 e bin.demangle=true
 e asm.emu=true
@@ -25,11 +22,36 @@ e asm.emustr=true
 # preload scripts (add complete path)
 # I know there is a '#' but r2 will execute it like a normal
 # macro creation command
-(sse, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/exp_tool2.py)
-(slc, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/findComments.py)
-(sdc, #!pipe python2.7 /home/niku/git-repos/Hacklets/Tools/Explorer2/clearComments.py)
 
-# maybe if we need some parameters
-# (script argv, \#!pipe python2.7 /PATH/exp_tool2.py $0)
+# format the stack in the visual mode, for debugging sessions
+(changeStackView, e cmd.stack = pxr 20@r:SP, e dbg.slow=true) # x86
+(changeStackView64, e cmd.stack = pxr 80@r:SP) # do not activate slow debug -> too much spam
+(stack, e cmd.stack = pxr 80@r:SP) # a simple command
 
+# print part of the stack before ebp well formated
+(printStack, pxr 0x120 @ ebp-0x40)
+(printStack64, pxr 0x240 @ rbp-0x40)
+
+# makros for r4ge
+(markMemSymbolic address bytes name, #!pipe python2.7 /home/niku/git-repos/r4ge/src/createVariable.py symb $0 $1 $2)
+(addHook address instructions bytes comment, #!pipe python2.7 /home/niku/git-repos/r4ge/src/createVariable.py hook $0 $1 $2 $3)  
+(addAssert address assertion comment, #!pipe python2.7 /home/niku/git-repos/r4ge/src/createVariable.py assert $0 $1 $2)
+(createScript name, #!pipe python2.7 /home/niku/git-repos/r4ge/src/createScript.py $0)
+#(callAddress, #!pipe python2.7 /home/niku/git-repos/r4ge/src/callState.py)
+(callFunction retval, #!pipe python2.7 /home/niku/git-repos/r4ge/src/callFunction.py $0)
+(r4ge, #!pipe python2.7 /home/niku/git-repos/r4ge/src/r4ge.py)
+
+# to call custom exploit files
+(exp ,  #!pipe python2.7 r2_script.py)
+
+# r2-tracer
+(tracer, #!pipe python2.7 /home/niku/git-repos/r2_tracer/r2_tracer.py)
+
+
+#/home/niku/git-repos/BacArbeit/r4ge/src
+
+# test macros
+#(py, #!pipe python2.7 /home/niku/git-repos/CTF_ToolBox/radare2/panles.py)
+
+#$pimp=#!pipe python /home/niku/.config/radare2/plugins/pimp/pimp_wrapper.py
 

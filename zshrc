@@ -62,6 +62,23 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# start ssh-agent automatically
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add
+fi
+
+
+# start tmux per default
+#tmux
+
+#execute with . for local assignment
+#. /home/niku/git-repos/nest-simulator/nest-build/bin/nest_vars.sh
+
+# add the ssh key for my local server automatically
+#ssh-add ~/.ssh/locallinux
+
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
