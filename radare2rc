@@ -3,28 +3,45 @@
 # -> pretty nice but lots of redundant stuff
 e asm.describe=false
 
-# set UTF8, arrows and everything looks a way smoother
+# set UTF8, arrows and everything looks a bit smoother
 e scr.utf8=true
+e scr.utf8.curvy=true
 
 # Solarized theme
 eco solarized
 
-# instead of clear assembler code it leads to a
-# weird c like thing which is hard to read..
-#e asm.pseudo=true
-
-# copied (I am not sure what it does)
-e asm.demangle=true
-e bin.demangle=true
-e asm.emu=true
+# instead of clear assembler code it leads to a pseudo C-code
+#e asm.pseudo=false
+# shows live register values next to instruction as comment
+#e asm.emu=false
+# shows live strings in local variables
 e asm.emustr=true
+
+# blankline after every basicblock
+e asm.bbline=true
+e asm.cmtrefs=true
+e asm.lineswidth=3
+
+# show section next to address
+e asm.section=false
+
+# others
+e asm.demangle=false
 
 # preload scripts (add complete path)
 # I know there is a '#' but r2 will execute it like a normal
 # macro creation command
 
+# binary information like from pwntools
+#(i ~format,arch,relro,canary,nx,pic,stripped,endian)
+
+# if you have set a breakpoint with condition and command,
+# multiple steps may be useful
+(simple_loop_sample, f cnt=3, loop:, ?e hello `?vi cnt`, f cnt=`?vi cnt-1`, ?= cnt, ?!(), .loop:)
+(dcLoop count, f cnt=$0, loop:, dc, f cnt=`?vi cnt-1`, ?= cnt, ?!(), .loop:)
+
 # format the stack in the visual mode, for debugging sessions
-(changeStackView, e cmd.stack = pxr 20@r:SP, e dbg.slow=true) # x86
+(changeStackView, e cmd.stack = pxr 40@r:SP, e dbg.slow=false) # x86
 (changeStackView64, e cmd.stack = pxr 80@r:SP) # do not activate slow debug -> too much spam
 (stack, e cmd.stack = pxr 80@r:SP) # a simple command
 
@@ -41,17 +58,14 @@ e asm.emustr=true
 (callFunction retval, #!pipe python2.7 /home/niku/git-repos/r4ge/src/callFunction.py $0)
 (r4ge, #!pipe python2.7 /home/niku/git-repos/r4ge/src/r4ge.py)
 
-# to call custom exploit files
+# to call custom exploit files, from the current directory
 (exp ,  #!pipe python2.7 r2_script.py)
 
 # r2-tracer
 (tracer, #!pipe python2.7 /home/niku/git-repos/r2_tracer/r2_tracer.py)
 
-
 #/home/niku/git-repos/BacArbeit/r4ge/src
-
 # test macros
 #(py, #!pipe python2.7 /home/niku/git-repos/CTF_ToolBox/radare2/panles.py)
-
 #$pimp=#!pipe python /home/niku/.config/radare2/plugins/pimp/pimp_wrapper.py
 
