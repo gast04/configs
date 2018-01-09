@@ -35,6 +35,10 @@ e dbg.consbreak = true
 # assume a new function is found after the last one
 e anal.hasnext = true
 
+# disable realign of disassembly if there is a flag in the middle
+# if an instruction
+e asm.midflags = false
+
 
 # others
 e asm.demangle=false
