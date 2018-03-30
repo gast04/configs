@@ -49,7 +49,9 @@ vm_startup() {
 
   done
   
-  echo "\ntry to connect...";
+  echo "\nplease, wait...";
+  sleep 2s;
+  echo "try to connect...";
   #ssh -p 3022 $2@127.0.0.1
   ssh pwn_vm
 }
