@@ -1,8 +1,16 @@
-"set nocompatible              " be iMproved, required
-"filetype off                  " required
+set nocompatible              " be iMproved, required
+filetype off                  " required"
 
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'Valloric/YouCompleteMe'
+"call vundle#end()
 
 let &colorcolumn=join(range(81,81),",")
+
+"Plugin 'Valloric/YouCompleteMe'
+"let g:ycm_global_ycm_extra_conf = 0
+"let g:ycm_key_invoke_completion = '<C-b>'
 
 " Brief help
 " :PluginList       - lists configured plugins
@@ -48,6 +56,9 @@ set tabstop=2
 
 " use spaces instead of tabs
 set expandtab
+
+" auto indent with newline
+set autoindent
 
 " set line break (during writing, only words)
 " set lbr
