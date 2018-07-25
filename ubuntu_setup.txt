@@ -1,0 +1,56 @@
+
+# install openssh to get ssh connection
+
+# install some basic programs
+apt-get install make g++ vim zsh git-core htop
+
+# improve usability
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+# change to zsh
+#chsh -s `which zsh`
+
+# set zsh theme
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="bira"/g' .zshrc
+
+# install zsh autocompletion
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+# add to .zshrc
+echo "\nsource ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh\n" >> .zshrc
+
+
+# TODO:
+#delete unecessary folders and programms
+
+# create python environments
+# TODO: get user with pwd
+cd /home/ubun && mkdir PythonEnvs
+apt-get install virtualenv
+
+virtualenv -p /usr/bin/python3.6 /home/ubun/PythonEnvs/py3
+
+apt-get install python2.7
+virtualenv -p /usr/bin/python2.7 /home/ubun/PythonEnvs/py2
+
+#TODO: clone config script from github
+# install ipython for both envs
+# set zshrc, add workon command
+
+mkdir git-repos
+
+# TODO: install a java version
+
+# generate SSH-key for github
+echo "github_key" | ssh-keygen -t rsa -b 4096 -C "github.com"
+
+# update .ssh/config
+touch .ssh/config
+
+echo "Host github.com\n\tIdentityFile ~/.ssh/github\n\tUser git" > .ssh/config
+
+# install config repository and set symlinks
+git clone git@github.com:gast04/configs.git
+ln -s git-repos/configs/vimrc .vimrc
+
+
