@@ -1,0 +1,15 @@
+
+# install vundle for vim plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# add plugins to vimrc
+
+# to install all plugins
+vim +PluginInstall +qall
+
+# for youcompleteme you have to extra compile it
+# got to the git repository .vim/bundle/YouCompleteMe
+python install.py
+
+
+

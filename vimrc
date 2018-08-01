@@ -1,10 +1,18 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required"
 
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"Plugin 'Valloric/YouCompleteMe'
-"call vundle#end()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+" nice tree view
+Plugin 'scrooloose/nerdtree'
+
+" code completion plugin
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+filetype plugin indent on
 
 let &colorcolumn=join(range(81,81),",")
 
@@ -76,9 +84,13 @@ set whichwrap+=<,>,h,l,[,]
 map <C-K> <C-Y>
 map <C-J> <C-E>
 
+" toggle NERDTree on/off
+map <C-n> :NERDTreeToggle<CR>
+" toggle NERDTree focus
+map <C-m> :NERDTreeFocus<CR>
+
 " to autoreload filechanges
 " set autoread
-
 
 try
    colorscheme desert
@@ -86,7 +98,6 @@ catch
 endtry
 
 set background=dark
-
 
 "set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
