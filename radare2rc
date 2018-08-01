@@ -1,4 +1,7 @@
 
+# analyze code and refs while disassembling
+e asm.anal=true
+
 # describes the assembler code
 # -> pretty nice but lots of redundant stuff
 e asm.describe=false
@@ -8,19 +11,19 @@ e scr.utf8=true
 e scr.utf8.curvy=true
 
 # Solarized theme
-eco solarized
+eco white
 
 # instead of clear assembler code it leads to a pseudo C-code
 #e asm.pseudo=false
 # shows live register values next to instruction as comment
 #e asm.emu=false
 # shows live strings in local variables
-e asm.emustr=true
+e asm.emu.str=true
 
 # blankline after every basicblock
 #e asm.bbline=true
-e asm.cmtrefs=true
-e asm.lineswidth=3
+e asm.cmt.refs=true
+e asm.lines.width=4
 
 # show section next to address
 e asm.section=false
@@ -37,7 +40,7 @@ e anal.hasnext = true
 
 # disable realign of disassembly if there is a flag in the middle
 # if an instruction
-e asm.midflags = false
+#e asm.midflags = false
 
 
 # others
