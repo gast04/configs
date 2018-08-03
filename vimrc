@@ -1,6 +1,6 @@
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -10,24 +10,25 @@ Plugin 'scrooloose/nerdtree'
 
 " code completion plugin
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_key_invoke_completion = '<C-Space>'
+
+" fancy status line
+Plugin 'powerline/powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" change line number section of the airline theme
+let g:airline_section_z = ' %p%%  𝌆   %l/%L : %c'
+
+" setting theme (default theme is nice)
+" let g:airline_theme='tomorrow'
+
+Plugin 'powerline/powerline-fonts'
 
 call vundle#end()
 filetype plugin indent on
 
 let &colorcolumn=join(range(81,81),",")
 
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_global_ycm_extra_conf = 0
-"let g:ycm_key_invoke_completion = '<C-b>'
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " setup selfmade status line
 "set statusline=
@@ -96,16 +97,8 @@ try
    colorscheme desert
 catch
 endtry
-
 set background=dark
-
-"set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
-
-" Always show statusline
-set laststatus=2
 
 "set guifont=/home/niku/.local/share/fonts/Source\ Code\ Pro\ for\ Powerline.otf 
 set guifont=/home/niku/.local/share/fonts/Space\ Mono\ for\ Powerline.ttf 
-
 
