@@ -53,4 +53,6 @@ echo "Host github.com\n\tIdentityFile ~/.ssh/github\n\tUser git" > .ssh/config
 git clone git@github.com:gast04/configs.git
 ln -s git-repos/configs/vimrc .vimrc
 
+# for qemu-arm
+sudo apt-get install libc6-armhf-cross
 
