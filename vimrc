@@ -24,6 +24,8 @@ let g:airline_section_z = ' %p%%  𝌆   %l/%L : %c'
 
 Plugin 'powerline/powerline-fonts'
 
+Plugin 'junegunn/fzf'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -53,6 +55,9 @@ set number
 
 " Always show current position
 set ruler
+
+" case insensitive search
+set ignorecase
 
 " set sourcecode depending folding
 " set foldmethod=syntax
@@ -89,6 +94,8 @@ map <C-J> <C-E>
 map <C-n> :NERDTreeToggle<CR>
 " toggle NERDTree focus
 map <C-m> :NERDTreeFocus<CR>
+
+map <C-a> :FZF<CR>
 
 " to autoreload filechanges
 " set autoread
