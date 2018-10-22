@@ -11,7 +11,7 @@ e scr.utf8=true
 e scr.utf8.curvy=true
 
 # Solarized theme
-eco white
+eco solarized
 
 # instead of clear assembler code it leads to a pseudo C-code
 #e asm.pseudo=false
@@ -36,26 +36,20 @@ e dbg.bpinmaps = false
 e dbg.consbreak = true
 
 # assume a new function is found after the last one
-e anal.hasnext = true
+e anal.hasnext = false
 
 # disable realign of disassembly if there is a flag in the middle
 # if an instruction
 #e asm.midflags = false
 
-
 # others
 e asm.demangle=false
 
 
-
-
-
-# preload scripts (add complete path)
-# I know there is a '#' but r2 will execute it like a normal
 # macro creation command
 
 # binary information like from pwntools
-#(i ~format,arch,relro,canary,nx,pic,stripped,endian)
+# (i ~format,arch,relro,canary,nx,pic,stripped,endian)
 
 # if you have set a breakpoint with condition and command,
 # multiple steps may be useful
@@ -86,9 +80,9 @@ $r4ge.verbose=True
 
 
 # to call custom exploit files, from the current directory
-(exp ,  #!pipe python2.7 r2_script.py)
-
-(args ,   #!pipe python2.7 /home/niku/git-repos/r2args/find_args.py)
+(exp,  #!pipe python2.7 r2_script.py)
+(exp2,  #!pipe python2.7 r2_script2.py)
+(args,   #!pipe python2.7 /home/niku/git-repos/r2args/find_args.py)
 
 # r2-tracer
 (tracer, #!pipe python2.7 /home/niku/git-repos/r2_tracer/r2_tracer.py)

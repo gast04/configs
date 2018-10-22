@@ -20,6 +20,12 @@ Plugin 'powerline/powerline-fonts'
 " nice file search
 Plugin 'junegunn/fzf'
 
+" to display indent lines
+Plugin 'Yggdroot/indentLine'
+
+" Powershell Support
+Plugin 'PProvost/vim-ps1'
+
 call vundle#end()
 filetype plugin indent on
 
