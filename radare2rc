@@ -18,7 +18,7 @@ eco solarized
 # shows live register values next to instruction as comment
 #e asm.emu=false
 # shows live strings in local variables
-e asm.emu.str=true
+#e asm.emu.str=true
 
 # blankline after every basicblock
 #e asm.bbline=true

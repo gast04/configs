@@ -17,7 +17,7 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="bira"/g' .zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 # add to .zshrc
-echo "\nsource ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh\n" >> .zshrc
+echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> .zshrc
 
 
 # TODO:
