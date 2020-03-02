@@ -1,33 +1,33 @@
 
 set nocompatible
-filetype off
-set rtp+=/home/niku/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-" nice tree view
-Plugin 'scrooloose/nerdtree'
-
-" code completion plugin
-Plugin 'Valloric/YouCompleteMe'
-
-" fancy status line
-Plugin 'powerline/powerline'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'powerline/powerline-fonts'
-
-" nice file search
-Plugin 'junegunn/fzf'
-
-" to display indent lines
-Plugin 'Yggdroot/indentLine'
-
-" Powershell Support
-Plugin 'PProvost/vim-ps1'
-
-call vundle#end()
-filetype plugin indent on
+"filetype off
+"set rtp+=/home/niku/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
+"
+"" nice tree view
+"Plugin 'scrooloose/nerdtree'
+"
+"" code completion plugin
+"Plugin 'Valloric/YouCompleteMe'
+"
+"" fancy status line
+"Plugin 'powerline/powerline'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'powerline/powerline-fonts'
+"
+"" nice file search
+"Plugin 'junegunn/fzf'
+"
+"" to display indent lines
+"Plugin 'Yggdroot/indentLine'
+"
+"" Powershell Support
+"Plugin 'PProvost/vim-ps1'
+"
+"call vundle#end()
+"filetype plugin indent on
 
 " read bar after charackter 80
 let &colorcolumn=join(range(81,81),",")
