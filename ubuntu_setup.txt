@@ -56,3 +56,10 @@ ln -s git-repos/configs/vimrc .vimrc
 # for qemu-arm
 sudo apt-get install libc6-armhf-cross
 
+
+i3-installation:
+i3wm-themer unix121
+i3lock i3
+
+
+
